@@ -1,38 +1,43 @@
 <?php 
 
-// conditional statements
+// variable scope
 
-// $price = 20;
+// local variables
 
-// if ($price < 10) {
-//     echo 'the condition is met';
-// } elseif ($price < 30) {
-//     echo 'elseif condition met';
-// } else {
-//     echo 'condition not met';
-// }
-
-$products = [
-    ['name' => 'shiny star', 'price' => 20],
-    ['name' => 'green shell', 'price' => 10],
-    ['name' => 'red shell', 'price' => 15],
-    ['name' => 'gold coin', 'price' => 5],
-    ['name' => 'lightning bolt', 'price' => 40],
-    ['name' => 'banana skin', 'price' => 2],
-];
-
-foreach($products as $product){
-    // if($product['price'] < 15 && $product['price'] > 2){
-    //     echo $product['name'] . '<br />';
-    // }
-
-
-    // if($product['price'] > 20 || $product['price'] < 10){
-    //     echo $product['name'] . '<br />';
-    // }
+function myFunc(){
+    $price = 10;
+    echo $price;
 }
 
+// myFunc();
+// echo $price;
 
+function myFuncTwo($age){
+    echo $age;
+}
+
+// myFuncTwo(25);
+
+// gloabl variables
+$name = 'mario';
+
+// function sayHello(){
+//     global $name;
+//     $name = 'yoshi';
+//     echo "hello $name";
+// }
+
+// sayHello();
+// echo $name;
+
+
+function sayBye(&$name){
+    $name = 'wario';
+    echo "bye $name";
+}
+
+sayBye($name);
+echo $name;
 
 ?>
 
@@ -46,18 +51,6 @@ foreach($products as $product){
 
 <body>
 
-    <div>
-        <ul>
-            <?php foreach($products as $product){ ?>
-            <?php if($product['price'] > 15) { ?>
-            <li><?php echo $product['name'] ?></li>
-            <?php } ?>
-
-            <?php } ?>
-        </ul>
-
-
-    </div>
 
 </body>
 
