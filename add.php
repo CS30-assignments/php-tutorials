@@ -1,34 +1,61 @@
-<?php 
+<?php
+
+// POST METHOD
+if (isset($_POST['submit'])) {
+
+    // check email
+    if (empty($_POST['email'])) {
+        echo 'An email is required <br />';
+    } else {
+        echo htmlspecialchars($_POST['email']);
+    }
+
+    // check title
+    if (empty($_POST['title'])) {
+        echo 'An title is required <br />';
+    } else {
+        echo htmlspecialchars($_POST['title']);
+    }
+
+    // check ingredients
+    if (empty($_POST['ingredients'])) {
+        echo 'At least one ingredient is required <br />';
+    } else {
+        echo htmlspecialchars($_POST['ingredients']);
+    }
+
+}  // end of the POST check
+
 
 ?>
 
 
 <!DOCTYPE html>
 <html>
-    <?php include('templates/header.php'); ?>
-    
-    <section class="container grey-text">
-        <h4 class="center">Add a Pizza</h4>
-        <form action="" method="" class="white">
-            <label>Your Email: </label>
-            <input type="text" name="email">
+<?php include('templates/header.php'); ?>
 
-            <label>Pizza Title: </label>
-            <input type="text" name="title">
+<section class="container grey-text">
+    <h4 class="center">Add a Pizza</h4>
+    <form class="white" action="add.php" method="POST">
+        <label>Your Email: </label>
+        <input type="text" name="email">
 
-            <label>Ingredients (comma seperated): </label>
-            <input type="text" name="ingredients">
+        <label>Pizza Title: </label>
+        <input type="text" name="title">
 
-            <div class="center">
-                <input type="submit" name="submit" value="submit" class="btn brand z-depth-0">
-            </div>
+        <label>Ingredients (comma seperated): </label>
+        <input type="text" name="ingredients">
 
-        </form>
+        <div class="center">
+            <input type="submit" name="submit" value="submit" class="btn brand z-depth-0">
+        </div>
 
-    </section>
+    </form>
+
+</section>
 
 
-    <?php include('templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>
 
 
 
