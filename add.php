@@ -3,7 +3,7 @@
 // Initialize Variables 
 $title = $email = $ingredients = '';
 
-$errors = array('email' => ' ', 'title' => ' ', 'ingredients' => ' ');
+$errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
 // POST METHOD
 if (isset($_POST['submit'])) {
@@ -39,11 +39,14 @@ if (isset($_POST['submit'])) {
     }
 
     if (array_filter($errors)) {
-        echo 'errors in the form';
-
+        // echo 'errors in the form';
     } else {
-        echo 'form is valid';
+        // echo 'form is valid';
+        header('Location: index.php');
     }
+    
+
+    
 }  // end of the POST check
 
 
