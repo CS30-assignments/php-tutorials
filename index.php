@@ -1,7 +1,5 @@
 <?php
 
-// #28 - 0:26
-
 // connect to database
 $conn = mysqli_connect('localhost', 'navika', 'php8090', 'ninja-pizza-php');
 
@@ -28,7 +26,7 @@ mysqli_close($conn);
 
 ?>
 
-<!-- #22 - 2:58 -->
+<!-- #28 - 0:26 -->
 
 <!DOCTYPE html>
 <html>
