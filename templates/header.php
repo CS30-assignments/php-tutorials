@@ -1,5 +1,26 @@
+<?php 
+
+session_start();
+
+// will overide any name that is entered in
+// $_SESSION['name'] = 'yoshi';
+
+if($_SERVER['QUERY_STRING'] == 'noname'){
+    // unset SINGLE session variable
+    unset($_SESSION['name']);
+
+    // unset ALL session variables
+    // session_unset();
+}
+
+$name = $_SESSION['name'] ?? 'Guest';
+
+?>
+
+
 <head>
     <title>Ninja Pizza</title>
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style type="text/css">
@@ -15,6 +36,15 @@
             margin: 20px auto;
             padding: 20px;
         }
+        
+        .pizza{
+            width: 100px;
+            margin: 30px auto;
+            display: block;
+            position: relative;
+        }
+
+
     </style>
     </head>
     <body class = "grey lighten-4">
@@ -22,6 +52,7 @@
             <div class = "container"></div>
                 <a href = "index.php" class = "brand-logo brand-text">Ninja Pizza</a>
                 <ul id="nav-mobile" class= "right hide-on-small-and-down">
+                    <li class="grey-text">Hello <?php echo htmlspecialchars($name)?></li>
                     <li><a href ="add.php" class = "btn brand z-depth-0">Add a Pizza</a></li>
                 </ul>
         </nav>
