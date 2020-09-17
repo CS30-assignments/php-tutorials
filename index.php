@@ -41,6 +41,7 @@ mysqli_close($conn);
         <?php foreach ($pizzas as $pizza) : ?>
             <div class="col s6 md3">
                 <div class="card z-depth-0">
+                    <img src="images/pizza.svg" class="pizza">
                     <div class="card-content center">
                         <h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
                         <ul>
@@ -50,18 +51,18 @@ mysqli_close($conn);
                         </ul>
                     </div>
                     <div class="card-action right-align">
-                        <a href="details.php?id=<?php echo $pizza['id']?>" class="brand-text">More Info</a>
+                        <a href="details.php?id=<?php echo $pizza['id'] ?>" class="brand-text">More Info</a>
                     </div>
                 </div>
             </div>
 
         <?php endforeach; ?>
 
-        <?php if (count($pizzas) >= 3) : ?>
+        <!-- <?php if (count($pizzas) >= 3) : ?>
             <p>there are 3 or more pizzas</p>
         <?php else : ?>
             <p>there are less than 3 pizzas</p>
-        <?php endif; ?>
+        <?php endif; ?> -->
 
     </div>
 </div>
