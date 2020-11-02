@@ -1,11 +1,11 @@
 <?php
 
 // sessions
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
     // cookies for gender
     setcookie('gender', $_POST['gender'], time() + 86400);
-    
+
     session_start();
 
     $_SESSION['name'] = $_POST['name'];
